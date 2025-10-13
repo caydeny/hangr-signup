@@ -1,0 +1,105 @@
+.home {
+  height: 100vh;
+}
+
+.home__logo {
+  margin-left: 10rem;
+  margin-top: 12.5rem;
+}
+
+.home__header {
+  font-size: 8rem;
+  margin-top: 2.125rem;
+  margin-left: 10rem;
+  font-weight: 800;
+}
+
+.home__subheader {
+  font-size: 2.25rem;
+  margin-top: 0.75rem;
+  margin-left: 10rem;
+  font-weight: 500;
+}
+
+.home__status {
+  margin-left: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.375rem;
+}
+
+.home__status-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.home__waitlist-header {
+  font-size: 1.25rem;
+  margin-left: 10rem;
+  margin-top: 6.25rem;
+  font-weight: 300;
+}
+.home__waitlist-input {
+  width: 25rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  margin-left: 10rem;
+  padding-left: 1rem;
+  margin-top: 1.25rem;
+  border: 1px solid #C7C7C7;
+  border-radius: 0.625rem;
+}
+
+.home__waitlist-button {
+  width: 6.25rem;
+  height: 2.5rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 0.625rem;
+  margin-left: 0.625rem;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 600px) {
+  
+  .home__logo {
+    width: 8rem;
+    height: auto;
+    margin-left: 2rem;
+    margin-top: 8rem;
+  }
+
+  .home__header {
+    margin-left: 2rem;
+    font-size: 4rem;
+  }
+
+  .home__subheader {
+    margin-left: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .home__status {
+    margin-left: 2rem;
+    font-size: 0.825rem;
+  }
+
+  .home__waitlist-header {
+    margin-left: 2rem;
+    font-size: 0.85rem;
+  }
+
+  .home__waitlist-input {
+    margin-left: 2rem;
+    max-width: 200px;
+    font-size: 0.75rem;
+  }
+
+  .home__waitlist-button {
+    font-size: 0.75rem;
+  }
+}
