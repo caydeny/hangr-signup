@@ -1,0 +1,8 @@
+.features {
+  margin-left: 10rem;
+  margin-top: 10rem;
+  height: 100vh;
+}
+.features__header {
+  font-size: 128px;
+}
