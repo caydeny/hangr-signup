@@ -3,15 +3,19 @@
   background-color: #1A1B1C;
   display: flex;
   align-items: center;
+  padding: 10%;
 }
 
 .about__content-wrapper {
   display: flex;
   flex-direction: row;
+  gap: 10%;
+  width: 100%;
+  max-width: 100%;
+  align-items: flex-start;
 }
 
 .about__intro {
-  margin-left: 15rem;
 }
 
 .about__header {
@@ -19,7 +23,6 @@
   font-size: 4rem;
   font-weight: 700;
   width: 34.375rem;
-  line-height: 5rem;
 }
 
 .about__subheader {
@@ -30,7 +33,9 @@
 }
 
 .about__divider {
-  margin-left: 16.25rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .about__point-wrapper {
@@ -38,6 +43,10 @@
   flex-direction: row;
   align-items: center;
   margin-top: 3.125rem;
+}
+
+.about__point-wrapper:first-child {
+  margin-top: 0;
 }
 
 .about__point-icon {
@@ -58,47 +67,64 @@
   color: white;
   font-weight: 500;
   font-size: 1.125rem;
-  width: 37.5rem;
+  width: 100%;
+  max-width: 100%;
   margin-top: 1.125rem;
   padding-left: 2.25rem;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 140%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .about__content-wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+}
 
-  .about__intro {
-    margin-left: 2rem;
+@media (max-width: 768px) {
+
+  .about__content-wrapper {
+    flex-direction: column;
+  }
+  .about__header {
+    font-size: 3rem;
+    line-height: 120%;
   }
 
+  .about__subheader {
+    font-size: 1.25rem;
+    margin-bottom: 10%;
+  }
+
+  .about__point-title {
+    font-size: 2rem;
+  }
+
+  .about__point-desc {
+    width: 100%;
+    font-size: 1.15rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
   .about__header {
     font-size: 2rem;
-    max-width: 300px;
-    line-height: normal;
+    width: 100%;
   }
 
   .about__subheader {
     font-size: 1rem;
   }
 
-  .about__content-wrapper {
-    flex-direction: column;
-  }
-  
-  .about__divider {
-    margin-left: 2rem;
-  }
-
-  .about__point-icon {
-    width: 0.625rem;
-    height: 0.625rem;
-  }
-
   .about__point-title {
-    font-size: 0.85rem;
+    font-size: 1.15rem;
   }
 
   .about__point-desc {
-    font-size: 0.75rem;
-    max-width: 300px;
+    font-size: 1rem;
   }
-
 }

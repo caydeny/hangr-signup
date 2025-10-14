@@ -1,36 +1,55 @@
 .contact {
-  width: 100%;
   height: 50vh;
-  margin-left: 160px;
-  margin-top: 100px;
+  padding: 10% 10%;
 }
 
 .contact__header {
   font-size: 128px;
   font-weight: 700;
-  margin-bottom: 100px;
+  margin-bottom: 10%;
 }
 
 .contact__subheader {
   font-size: 48px;
   font-weight: 400;
-  max-width: 750px;
+  max-width: 40%;
 }
 
 .contact-row {
   display: flex;
 }
 
-.contact-column {
-  margin-left: 200px;
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  gap: 1rem;
 }
 
 .contact__info-header {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 24px;
 }
 
 .contact__info-details {
   font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .contact__header {
+    font-size: 4rem;
+  }
+
+  .contact__subheader {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .contact__header {
+    font-size: 2rem;
+  }
+
+  .contact__subheader {
+    font-size: 1.75rem;
+  }
 }

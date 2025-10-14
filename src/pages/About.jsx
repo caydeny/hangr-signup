@@ -4,6 +4,7 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="about__content-wrapper">
+
         <div className="about__intro">
           <h1 className="about__header">
             Explore, uncover, and connect with brands that fit your unique style
@@ -43,6 +44,7 @@ function About() {
             style discovery and plans to expand into direct brand partnerships and shopping integrations after the beta phase.
           </p>
         </div>
+        
       </div>
     </section>
   );

@@ -1,15 +1,28 @@
 .features {
-  margin-left: 10rem;
-  margin-top: 10rem;
+  padding: 10% 10%;
   height: 100vh;
 }
+
 .features__header {
   font-size: 128px;
 }
 
-@media (max-width: 600px) {
+.features__subheader {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
   .features {
-    margin-left: 2rem;
+    margin-left: 5%;
+  }
+  .features__header {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    margin-left: 5%;
   }
   .features__header {
     font-size: 2rem;
