@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
+import AnimatedText from "../components/AnimatedText";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -54,7 +55,7 @@ function Home() {
   return (
     <section className="home">
       <img className="home__logo" src="/logo.svg" alt="Hangr logo" />
-      <h1 className="home__header">Explore</h1>
+      <AnimatedText />
       <h2 className="home__subheader">Brands that fit your unique style</h2>
 
       <div className="home__status">
@@ -85,7 +86,7 @@ function Home() {
         </button>
       </div>
       <div className="home__signup">
-        <img src="./users.svg" alt="pfps"/>
+        <img className="home__signup-users"src="./users.svg" alt="pfps"/>
         <p className="home__signup-count">
           {count} people have signed up
         </p>

@@ -40,6 +40,7 @@
 
   .navbar__title {
     font-size: 1.5rem;
+    margin-right: 4rem;
   }
 
   .navbar__toggle {
@@ -47,6 +48,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+    margin-left: 0.625rem;
   }
 
   .bar {

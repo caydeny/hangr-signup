@@ -7,12 +7,7 @@
   margin-top: 12.5rem;
 }
 
-.home__header {
-  font-size: 8rem;
-  margin-top: 2.125rem;
-  margin-left: 10rem;
-  font-weight: 800;
-}
+
 
 .home__subheader {
   font-size: 2.25rem;
@@ -114,5 +109,18 @@
 
   .home__waitlist-button {
     font-size: 0.75rem;
+  }
+
+  .home__signup {
+    margin-left: 9rem;
+  }
+
+  .home__signup-count {
+    font-size: 0.725rem;
+  }
+
+  .home__signup-users {
+    width: 4rem;
+    height: auto;
   }
 }
