@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
 import Features from './pages/Features'
+import Contact from './pages/Contact'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <About />
       <Features />
       <FAQ />
-
+      <Contact />
     </>
   )
 }
