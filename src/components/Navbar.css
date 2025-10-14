@@ -40,7 +40,7 @@
 
   .navbar__title {
     font-size: 1.5rem;
-    margin-right: 4rem;
+    margin-right: 5rem;
   }
 
   .navbar__toggle {
@@ -48,7 +48,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-    margin-left: 0.625rem;
+    margin-left: 2rem;
   }
 
   .bar {
@@ -59,15 +59,23 @@
 
   .navbar__links {
     position: absolute;
-    top: 5rem;
+    top: 4.35rem;
     width: 100%;
     background-color: #1A1B1C;
     flex-direction: column;
     align-items: center;
     display: none;
+    z-index: 9999;
   }
 
   .navbar__links.active {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+  }
+  .navbar__title.inactive {
+    color: #1A1B1C;
+;
   }
 }

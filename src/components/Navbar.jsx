@@ -13,11 +13,11 @@ function Navbar() {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <h1 className="navbar__title">Hangr</h1>
+      <h1 className={`navbar__title ${isOpen? "inactive" : ""}`}>hangr</h1>
       <div className={`navbar__links ${isOpen ? "active" : ""}`}>
-        <a className="navbar__link"href="#about">About</a>
-        <a className="navbar__link" href="#faq">FAQ</a>
-        <a className="navbar__link" href="#contact">Contact</a>
+        <a className="navbar__link" href="#about" onClick={() => setIsOpen(false)}>About</a>
+        <a className="navbar__link" href="#faq" onClick={() => setIsOpen(false)}>FAQ</a>
+        <a className="navbar__link" href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
       </div>
     </nav>
   );
