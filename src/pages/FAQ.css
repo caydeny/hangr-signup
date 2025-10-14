@@ -1,7 +1,9 @@
 .faq {
   height: 100vh;
-  margin-left: 160px;
+  padding-left: 160px;
   padding-top: 130px;
+  background-color: #1A1B1C;
+  color: white;
 }
 
 .faq__header {
@@ -35,7 +37,8 @@
 
   .faq {
     margin-left: 0;
-    padding-top: 20px;
+    padding-top: 80px;
+    padding-left: 0;
   }
 
   .faq__header {

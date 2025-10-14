@@ -6,3 +6,12 @@
 .features__header {
   font-size: 128px;
 }
+
+@media (max-width: 600px) {
+  .features {
+    margin-left: 2rem;
+  }
+  .features__header {
+    font-size: 2rem;
+  }
+}
