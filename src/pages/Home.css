@@ -70,6 +70,24 @@
   color: #3C3C3C;
 }
 
+.home__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.home__more-arrow {
+  height: auto;
+  margin-bottom: 0.5rem;
+  margin-top: 6rem;
+}
+
+.home__more-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 @media (max-width: 600px) {
   .home {
     height: 92vh;
@@ -123,5 +141,17 @@
   .home__signup-users {
     width: 4rem;
     height: auto;
+  }
+
+  .home__more-arrow {
+    height: auto;
+    width: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 8rem;
+  }
+
+.home__more-text {
+    font-size: 1.05rem;
+    font-weight: 600;
   }
 }

@@ -91,6 +91,11 @@ function Home() {
           {count} people have signed up
         </p>
       </div>
+      <div className="home__more">
+        <img className="home__more-arrow" src="./arrow.svg" alt="arrow"/>
+        <p className="home__more-text">Learn more</p>
+      </div>
+
     </section>
   );
 }
