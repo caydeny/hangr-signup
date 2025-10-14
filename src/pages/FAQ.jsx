@@ -2,7 +2,7 @@ import './FAQ.css';
 
 function FAQ() {
   return (
-    <section className="faq">
+    <section className="faq" id="faq">
       <div className="faq__content">
         <h1 className="faq__header">FAQ.</h1>
 

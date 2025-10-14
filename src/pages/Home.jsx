@@ -53,7 +53,7 @@ function Home() {
   };
 
   return (
-    <section className="home">
+    <section className="home" id="home">
       <img className="home__logo" src="/logo.svg" alt="Hangr logo" />
       <AnimatedText />
       <h2 className="home__subheader">Brands that fit your unique style</h2>

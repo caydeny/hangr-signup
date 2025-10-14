@@ -15,9 +15,9 @@ function Navbar() {
       </div>
       <h1 className="navbar__title">Hangr</h1>
       <div className={`navbar__links ${isOpen ? "active" : ""}`}>
-        <a className="navbar__link"href="#About">About</a>
-        <a className="navbar__link" href="#FAQ">FAQ</a>
-        <a className="navbar__link" href="#Contact">Contact</a>
+        <a className="navbar__link"href="#about">About</a>
+        <a className="navbar__link" href="#faq">FAQ</a>
+        <a className="navbar__link" href="#contact">Contact</a>
       </div>
     </nav>
   );
