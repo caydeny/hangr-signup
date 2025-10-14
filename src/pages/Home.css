@@ -1,13 +1,11 @@
 .home {
-  height: 100vh;
+  height: calc(100vh - 6rem);
 }
 
 .home__logo {
   margin-left: 10rem;
   margin-top: 12.5rem;
 }
-
-
 
 .home__subheader {
   font-size: 2.25rem;
@@ -73,12 +71,15 @@
 }
 
 @media (max-width: 600px) {
+  .home {
+    height: 92vh;
+  }
   
   .home__logo {
     width: 8rem;
     height: auto;
     margin-left: 2rem;
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 
   .home__header {

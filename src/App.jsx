@@ -11,6 +11,7 @@ function App() {
     <>
       <Navbar />
       <Home />
+      <div class="gradient-divider"></div>
       <About />
       <FAQ />
 
