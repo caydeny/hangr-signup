@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@plunk/node": "^3.0.3",
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
