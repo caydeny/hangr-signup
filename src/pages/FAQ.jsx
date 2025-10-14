@@ -8,47 +8,47 @@ function FAQ() {
 
         <div className="faq__list">
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">Is hangr free to use?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Yes. Hangr will be free to use during both the early-access and public release phases.
             </p>
           </div>
 
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">Why should I join the waitlist?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Joining the waitlist provides early access to hangr's beta version, allowing participants to 
+              experience the app before its public release and share valuable feedback to help improve the platform.
             </p>
           </div>
 
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">When will Hangr launch?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              hangr is currently in its early development phase. After initial engagement testing, 
+              early-access invitations will be sent to waitlist members.            
             </p>
           </div>
 
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">Are the brands on hangr real?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              During the demo phase, the platform uses AI-generated clothing and brands for engagement testing.
+              Real designer and brand partnerships will be introduced once user traction grows.
             </p>
           </div>
 
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">Why is an email address required?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Email addresses are collected only to provide updates about beta invitations, platform progress, and launch announcements.
             </p>
           </div>
 
           <div className="faq__item">
-            <h2 className="faq__question">Have the right conversation, every time.</h2>
+            <h2 className="faq__question">Will user data be shared or sold?</h2>
             <p className="faq__answer">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum.
+              No. User information is kept private and secure. Hangr does not sell or share data with third parties.
             </p>
           </div>
         </div>
