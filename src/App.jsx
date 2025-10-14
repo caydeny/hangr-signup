@@ -6,6 +6,7 @@ import About from './pages/About'
 import FAQ from './pages/FAQ'
 import Features from './pages/Features'
 import Contact from './pages/Contact'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Features />
       <FAQ />
       <Contact />
+      <Footer />
     </>
   )
 }
