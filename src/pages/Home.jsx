@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Home.css";
 
 function Home() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
+  const [count, setCount] = useState(null);
+
+  useEffect(() => {
+  fetch("https://hangr-api.vercel.app/api/waitlist-count")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Fetched count:", data);
+      setCount(data.count);
+    })
+    .catch((err) => console.error("Error fetching count:", err));
+  }, []);
+
 
   const handleSubmit = async () => {
     if (!email) return;
@@ -23,10 +35,14 @@ function Home() {
         }),
       });
 
-      if (res.ok) {
-        setStatus("success");
-        setEmail("");
-      } else {
+  if (res.ok) {
+    setStatus("success");
+    setEmail("");
+    fetch("https://hangr-api.vercel.app/api/waitlist-count")
+      .then((res) => res.json())
+      .then((data) => setCount(data.count))
+      .catch((err) => console.error("Error fetching count:", err));
+  } else {
         setStatus("error");
       }
     } catch (err) {
@@ -67,6 +83,12 @@ function Home() {
         >
           {status === "loading" ? "Joining..." : "Join waitlist"}
         </button>
+      </div>
+      <div className="home__signup">
+        <img src="./users.svg" alt="pfps"/>
+        <p className="home__signup-count">
+          {count} people have signed up
+        </p>
       </div>
     </section>
   );

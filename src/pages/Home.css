@@ -56,12 +56,25 @@
 .home__waitlist-button {
   width: 6.25rem;
   height: 2.5rem;
-  color: white;
-  background-color: black;
-  border: none;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
   border-radius: 0.625rem;
   margin-left: 0.625rem;
   font-size: 0.8125rem;
+}
+
+.home__signup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  margin-left: 19.25rem;
+}
+
+.home__signup-count {
+  font-size: 0.875rem;
+  color: #3C3C3C;
 }
 
 @media (max-width: 600px) {
