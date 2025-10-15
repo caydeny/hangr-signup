@@ -7,7 +7,7 @@ function About() {
 
         <div className="about__intro">
           <h1 className="about__header">
-            Explore, uncover, and connect with brands that fit your unique style
+            To make brand discovery effortless, inspiring, and personal for those who live to express themselves.
           </h1>
           <p className="about__subheader">Have the right conversation, every time.</p>
         </div>
@@ -34,7 +34,7 @@ function About() {
           </p>
 
           {/* Point #3 */}
-          <div className="about__point-wrapper">
+          {/* <div className="about__point-wrapper">
             <div className="about__point-icon"></div>
             <h2 className="about__point-title">How will it work?</h2>
           </div>
@@ -42,7 +42,7 @@ function About() {
             The app features an interactive swipe-based experience where users can like, skip, or explore more details including verified links to purchase each piece. Favorited items 
             are saved to a personalized Wardrobe, allowing users to revisit and refine their unique style over time. hangr currently focuses on brand and 
             style discovery and plans to expand into direct brand partnerships and shopping integrations after the beta phase.
-          </p>
+          </p> */}
         </div>
         
       </div>

@@ -26,8 +26,23 @@
   font-size: 1.15rem;
   font-weight: 400;
   margin-top: 18px;
-  width: 575px;
+  width: 100%;
 }
+
+@media (max-width: 1000px) {
+  .faq__header {
+    font-size: 4rem;
+  }
+
+  .faq__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .faq__question {
+    font-size: 1.75rem;
+  }
+}
+
 
 @media (min-width: 768px) and (max-width: 960px) {
   .faq__list {
@@ -39,7 +54,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
   .faq__header {
     font-size: 4rem;

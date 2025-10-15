@@ -102,7 +102,7 @@
   }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .home {
     margin-left: 1rem;
   }

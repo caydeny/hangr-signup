@@ -20,11 +20,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .features {
     margin-left: 5%;
   }
   .features__header {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 }
