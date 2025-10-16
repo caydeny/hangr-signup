@@ -69,46 +69,39 @@
   color: #3C3C3C;
 }
 
-.home__more {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3rem;
-}
-
 @media (max-width: 768px) {
   .home {
     margin-left: 10%;
   }
   .home__logo {
     height: auto;
-
+    width: 30%;
   }
 
   .home__subheader {
-    font-size: 1.625rem;
+    font-size: 160%;
   }
 
   .home__status {
-    font-size: 0.825rem;
+    font-size: 70%;
   }
 
   .home__waitlist-header {
-    font-size: 1.25rem;
+    font-size: 100%;
   }
 
   .home__waitlist-input {
     width: 18rem;
   }
 
+  .home__signup-count {
+    font-size: 70%;
+  }
+
 }
 @media (max-width: 600px) {
   .home {
     margin-left: 1rem;
-  }
-
-  .home__waitlist-header {
-    font-size: 0.825rem;
   }
 
   .home__waitlist-input {

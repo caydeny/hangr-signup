@@ -11,6 +11,12 @@
   font-weight: 600;
 }
 
+@media (max-width: 1000px) {
+  .features__header {
+    font-size: 4rem;
+  }
+}
+
 @media (max-width: 768px) {
 
   .features__header {
