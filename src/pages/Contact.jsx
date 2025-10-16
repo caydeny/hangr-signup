@@ -8,8 +8,7 @@ function Contact() {
         <h1 className="contact__header">Contact Us.</h1>
         <div className="contact-row">
           <h2 className="contact__subheader">
-            Explore, Uncover, and Connect with brands that 
-            fit your unique style
+            We'd love to hear from you — reach out and connect with the Hangr team.
           </h2>
           <div className="contact__info">
             <h3 className="contact__info-header">Contact</h3>

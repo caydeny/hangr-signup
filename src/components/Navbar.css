@@ -67,6 +67,7 @@
     align-items: center;
     justify-content: center;
     height: 20rem;
+    z-index: 9999;
   }
 
   .navbar__title.inactive {

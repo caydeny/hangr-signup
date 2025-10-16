@@ -4,13 +4,13 @@
 }
 
 .contact__header {
-  font-size: 128px;
+  font-size: 8rem;
   font-weight: 700;
   margin-bottom: 10%;
 }
 
 .contact__subheader {
-  font-size: 48px;
+  font-size: 2.65rem;
   font-weight: 400;
   max-width: 40%;
 }

@@ -4,7 +4,7 @@
 }
 
 .features__header {
-  font-size: 128px;
+  font-size: 8rem;
 }
 
 .features__subheader {
@@ -12,19 +12,18 @@
 }
 
 @media (max-width: 768px) {
-  .features {
-    margin-left: 5%;
-  }
+
   .features__header {
     font-size: 4rem;
   }
 }
 
 @media (max-width: 600px) {
-  .features {
-    margin-left: 5%;
-  }
+
   .features__header {
     font-size: 4rem;
+  }
+  .features__subheader {
+    font-size: 1.125rem;
   }
 }
