@@ -20,16 +20,6 @@
 @media (max-width: 768px) {
 
   .features__header {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .features__header {
-    font-size: 4rem;
-  }
-  .features__subheader {
-    font-size: 1.125rem;
+    font-size: 3rem;
   }
 }

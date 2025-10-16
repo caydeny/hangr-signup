@@ -8,12 +8,15 @@
   background-color: #1A1B1C;
   padding: 2rem 8vw;
   box-sizing: border-box;
+  z-index: 10;
+  position: relative;
 }
 
 .navbar__title {
   font-size: 1.5rem;
   color: white;
   font-weight: 600;
+  opacity: 1;
 }
 
 .navbar__links {
@@ -32,10 +35,36 @@
   display: none;
 }
 
+/* hamburger bars */
+.bar {
+  width: 1.8rem;
+  height: 0.15rem;
+  background-color: white;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+/* when the toggle has the .open class, animate the two bars into an X */
+.navbar__toggle.open .bar:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.navbar__toggle.open .bar:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
+
 @media (max-width: 768px) {
 
   .navbar {
-    height: 6rem;
+    height: 5rem;
   }
 
   .navbar__toggle {
@@ -45,35 +74,66 @@
     gap: 0.5rem;
   }
 
+  .navbar__toggle.open {
+    .bar.active
+  }
+
   .bar {
     width: 1.8rem;
     height: 0.15rem;
     background-color: white;
   }
 
+  .bar.active:nth-child(1) {
+    transform: rotateX(60deg);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .bar.active:nth-child(2) {
+    transform: rotateX('angle');
+  }
+
+
   .navbar__links {
     position: absolute;
-    top: 6rem;
+    left: 0;
+    width: 100%;
+    top: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    background-color: #1A1B1C;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 9999;
+    padding-top: 40%;
+  }
+
+  .navbar__links.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: absolute;
     left: 0;
     width: 100%;
     background-color: #1A1B1C;
     flex-direction: column;
     align-items: center;
-    display: none;
+    pointer-events: auto;
   }
 
-  .navbar__links.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
-    z-index: 9999;
+  .navbar__title {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.4s ease-in-out;
   }
 
   .navbar__title.inactive {
-    color: #1A1B1C;
+    opacity: 0;
+    pointer-events: none;
   }
 }
-@media (max-width: 600px) {
-  
-}
+

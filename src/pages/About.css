@@ -97,6 +97,7 @@
   .about__subheader {
     width: 200%;
     margin-bottom: 20%;
+
   }
 }
 
@@ -106,38 +107,51 @@
     flex-direction: column;
   }
   .about__header {
-    font-size: 3rem;
+    font-size: 300%;
     line-height: 120%;
   }
 
   .about__subheader {
-    font-size: 1.25rem;
     margin-bottom: 10%;
   }
 
   .about__point-title {
-    font-size: 2rem;
   }
 
   .about__point-desc {
     width: 100%;
-    font-size: 1.15rem;
     max-width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .about__header {
-    font-size: 2.125rem;
     line-height: 100%;
+    font-size: 250%;
   }
 
   .about__subheader {
-    font-size: 1.25rem;
   }
 
   .about__point-title {
-    font-size: 1.15rem;
+  }
+
+  .about__point-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__header {
+    font-size: 200%;
+  }
+
+  .about__subheader {
+    font-size: 100%;
+  }
+
+  .about__point-title {
+    font-size: 1.125rem;
   }
 
   .about__point-desc {

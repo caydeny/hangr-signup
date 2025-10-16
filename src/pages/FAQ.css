@@ -70,8 +70,12 @@
 
 @media (max-width: 600px) {
 
+  .faq {
+    height: 100%;
+  }
+
   .faq__header {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .faq__list {
@@ -80,7 +84,7 @@
   }
 
   .faq__question {
-    font-size: 1.15rem;
+    font-size: 1.125rem;
   }
 
   .faq__answer {
