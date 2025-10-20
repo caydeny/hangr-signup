@@ -1,116 +1,166 @@
 .home {
-  height: calc(100vh - 6rem);
-  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.home__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 10%;
+  margin-top: 14rem;
 }
-
-.home__logo {
-  height: auto;
-  width: 10rem;
-}
-
 .home__subheader {
-  font-size: 2.25rem;
-  margin-top: 0.75rem;
   font-weight: 500;
+  font-size: 1.125rem;
+  margin-top: 1rem;
 }
 
 .home__status {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  margin-top: 0.375rem;
+  gap: 0.45rem;
 }
-
 .home__status-icon {
-  width: 0.5rem;
-  height: 0.5rem;
+  height: 8px;
+  width: 8px;
   border-radius: 100%;
   background-color: red;
 }
-
-.home__waitlist-header {
-  font-size: 1.25rem;
-  margin-top: 6.25rem;
+.home__status-text {
+  font-size: 0.75rem;
   font-weight: 300;
 }
+
+.home__waitlist {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.home__waitlist-header {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
 .home__waitlist-input {
-  width: 25rem;
-  height: 2.5rem;
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+  color: black;
   font-size: 0.875rem;
-  padding-left: 1rem;
-  margin-top: 1.25rem;
-  border: 1px solid #C7C7C7;
-  border-radius: 0.625rem;
 }
 
 .home__waitlist-button {
-  width: 6.25rem;
-  height: 2.5rem;
-  color: black;
+  padding: 0.5rem;
   background-color: white;
   border: 1px solid black;
-  border-radius: 0.625rem;
-  margin-left: 0.625rem;
-  font-size: 0.8125rem;
+  border-radius: 0.25rem;
 }
 
 .home__signup {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 1rem;
+  gap: 0.25rem;
 }
-
+.home__signup-users {
+  height: auto;
+  width: 4rem;
+}
 .home__signup-count {
-  font-size: 0.875rem;
-  color: #3C3C3C;
+  font-size: 0.725rem;
+  font-weight: 500;
 }
 
-@media (max-width: 768px) {
+.home__image {
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
   .home {
-    margin-left: 10%;
+    flex-direction: row;
+    margin-top: 0;
+    height: 100vh;
   }
-  .home__logo {
+
+  .home__content {
+    flex: 1 1 0;
+    box-sizing: border-box;
     height: auto;
-    width: 30%;
+    margin-top: 0;
   }
-
   .home__subheader {
-    font-size: 160%;
+    font-size: 1.5rem;
   }
 
-  .home__status {
-    font-size: 70%;
+  .home__status-text {
+    font-size: 0.825rem;
   }
 
   .home__waitlist-header {
-    font-size: 100%;
-  }
-
-  .home__waitlist-input {
-    width: 18rem;
+    font-size: 1.25rem;
   }
 
   .home__signup-count {
-    font-size: 70%;
+    font-size: 0.825rem;
   }
 
+  .home__image-wrapper {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home__image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    margin-top: 0;
+  }
 }
-@media (max-width: 600px) {
+
+@media (min-width: 1200px) {
   .home {
-    margin-left: 1rem;
+    max-height: 100vh;
   }
 
-  .home__waitlist-input {
-    width: 65%;
-    font-size: 0.7rem;
+  .home__content {
+    margin-left: 5%;
   }
 
-  .home__waitlist-button {
-    width: 25%;
-    font-size: 0.7rem;
+  .home__subheader {
+    font-size: 1.915rem;
+  }
+
+  .home__status-text {
+    font-size: 0.925rem;
+  }
+
+  .home__waitlist-header {
+    font-size: 1.375rem;
+  }
+
+  .home__signup-count {
+    font-size: 0.925rem;
+  }
+
+  .home__image-wrapper {
+    flex: 1 1 0;
+    max-width: 60rem;
+  }
+
+  .home__image {
+    width: 100%;
+    max-width: 40rem;
+    max-height: 80vh;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }

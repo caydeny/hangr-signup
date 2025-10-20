@@ -54,42 +54,48 @@ function Home() {
 
   return (
     <section className="home" id="home">
-      <img className="home__logo" src="/logo.svg" alt="Hangr logo" />
-      <AnimatedText />
-      <h2 className="home__subheader">Brands that fit your unique style</h2>
 
-      <div className="home__status">
-        <div className="home__status-icon"></div>
-        <p className="home__status-text">Currently in development</p>
+      <div className="home__content">
+        <AnimatedText />
+        <h2 className="home__subheader">Brands that fit your unique style</h2>
+
+        <div className="home__status">
+          <div className="home__status-icon"></div>
+          <p className="home__status-text">Currently in development</p>
+        </div>
+
+        <div className="home__waitlist">
+          <h3 className="home__waitlist-header">
+            Reserve your spot on the waitlist
+          </h3>
+
+          <input
+            className="home__waitlist-input"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            required
+          />
+
+          <button
+            className="home__waitlist-button"
+            onClick={handleSubmit}
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Joining..." : "Join waitlist"}
+          </button>
+        </div>
+        <div className="home__signup">
+          <img className="home__signup-users"src="./users.svg" alt="User profile icons"/>
+          <p className="home__signup-count">
+            {count} people have signed up
+          </p>
+        </div>
       </div>
 
-      <div className="home__waitlist">
-        <h3 className="home__waitlist-header">
-          Reserve your spot on the waitlist
-        </h3>
-
-        <input
-          className="home__waitlist-input"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter email address"
-          required
-        />
-
-        <button
-          className="home__waitlist-button"
-          onClick={handleSubmit}
-          disabled={status === "loading"}
-        >
-          {status === "loading" ? "Joining..." : "Join waitlist"}
-        </button>
-      </div>
-      <div className="home__signup">
-        <img className="home__signup-users"src="./users.svg" alt="pfps"/>
-        <p className="home__signup-count">
-          {count} people have signed up
-        </p>
+      <div className="home__image-wrapper">
+        <img className="home__image"src="/mock.png"/>
       </div>
 
     </section>

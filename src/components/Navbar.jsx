@@ -24,7 +24,10 @@ function Navbar() {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <h1 className={`navbar__title ${isOpen? "inactive" : ""}`}>hangr</h1>
+      <div style={{display:"flex", alignItems:"center", gap:"10%"}}>
+        <img src="/logo_header.svg" alt="logo" />
+      </div>
+        
       <div className={`navbar__links ${isOpen ? "active" : ""}`}>
         <a className="navbar__link" href="#about" onClick={() => setIsOpen(false)}>About</a>
         <a className="navbar__link" href="#features" onClick={() => setIsOpen(false)}>Features</a>
