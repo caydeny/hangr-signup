@@ -1,95 +1,113 @@
 .faq {
-  height: 100vh;
-  padding: 10% 10%;
-  background-color: #1A1B1C;
+  min-height: 100vh;
+  padding: 12% 8%;
+  background-color: #1a1b1c;
   color: white;
+  font-family: "Inter", sans-serif;
 }
 
 .faq__header {
-  font-size: 8rem;
+  font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 10rem;
 }
 
 .faq__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10% 20%;
-  margin-top: 5%;
-  padding-left: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.faq__item {
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.25);
+  padding-bottom: 1.25rem;
+  padding-left: 0.75rem;
+}
+
+.faq__item.active {
+  border-left: 2px solid #cfcfcf;
 }
 
 .faq__question {
-  font-size: 1.375rem;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 1.25rem;
   font-weight: 700;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq__icon {
+  font-size: 1.25rem;
+  color: #bfbfbf;
 }
 
 .faq__answer {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   font-weight: 400;
-  margin-top: 18px;
-  width: 130%;
+  margin-top: 16px;
+  color: #bfbfbf;
+  line-height: 1.6;
+  width: 100%;
 }
 
-@media (max-width: 1000px) {
-  .faq__header {
-    font-size: 4rem;
-  }
-
-  .faq__list {
-    grid-template-columns: repeat(1, 1fr);
-    padding-left: 0;
-    width: 80%;
-  }
-
-  .faq__question {
-    font-size: 1.375rem;
-  }
-}
-
-
-  @media (max-width: 768px) {
-  .faq__list {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5%;
+@media (min-width: 768px) {
+  .faq {
+    padding: 10% 12%;
   }
 
   .faq__header {
     font-size: 5rem;
   }
 
+  .faq__list {
+    gap: 3rem;
+  }
+
   .faq__question {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 
   .faq__answer {
-    width: 100%;
-    font-size: 1rem;
+    font-size: 1.125rem;
+    width: 110%;
   }
-
 }
 
-@media (max-width: 600px) {
-
+@media (min-width: 1200px) {
   .faq {
-    height: 100%;
+    padding: 10% 10%;
   }
 
   .faq__header {
-    font-size: 3rem;
+    font-size: 8rem;
+    margin-bottom: 5%;
   }
 
   .faq__list {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8% 18%;
+    padding-left: 20%;
+  }
+
+  .faq__item {
+    padding: 1.5rem 0;
+    padding-left: 1rem;
   }
 
   .faq__question {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
   }
 
   .faq__answer {
-    font-size: 1rem;
+    font-size: 1.125rem;
     width: 130%;
   }
-
 }
