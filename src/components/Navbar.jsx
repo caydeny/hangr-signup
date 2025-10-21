@@ -24,8 +24,9 @@ function Navbar() {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <div style={{display:"flex", alignItems:"center", gap:"10%"}}>
+      <div style={{display:"flex", alignItems:"center", justifyContent:"center", gap:"10%"}}>
         <img src="/logo_header.svg" alt="logo" />
+        <img className="logo" src="/logo.svg" />
       </div>
         
       <div className={`navbar__links ${isOpen ? "active" : ""}`}>

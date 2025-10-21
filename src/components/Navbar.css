@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #1A1B1C;
-  padding: 2rem 8vw;
+  padding: 1.45rem 8vw;
   box-sizing: border-box;
   z-index: 10;
   position: relative;
@@ -45,7 +45,6 @@
   transform-origin: center;
 }
 
-/* when the toggle has the .open class, animate the two bars into an X */
 .navbar__toggle.open .bar:nth-child(1) {
   transform: translateY(5px) rotate(45deg);
 }
@@ -60,11 +59,16 @@
   touch-action: none;
 }
 
+.logo {
+  width: 6rem;
+  height: auto;
+  padding-top: 10px;
+}
 
 @media (max-width: 768px) {
 
   .navbar {
-    height: 5rem;
+    height: 4rem;
   }
 
   .navbar__toggle {
@@ -87,6 +91,10 @@
 
   .bar.active:nth-child(2) {
     transform: rotateX('angle');
+  }
+
+  .logo {
+    display: none;
   }
 
 
