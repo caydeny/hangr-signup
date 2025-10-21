@@ -54,6 +54,9 @@ function Home() {
 
   return (
     <section className="home" id="home">
+      <div className="home__image-wrapper">
+        <img className="home__image"src="/mock.png"/>
+      </div>
 
       <div className="home__content">
         <AnimatedText />
@@ -65,9 +68,6 @@ function Home() {
         </div>
 
         <div className="home__waitlist">
-          <h3 className="home__waitlist-header">
-            Reserve your spot on the waitlist
-          </h3>
 
           <input
             className="home__waitlist-input"
@@ -94,9 +94,6 @@ function Home() {
         </div>
       </div>
 
-      <div className="home__image-wrapper">
-        <img className="home__image"src="/mock.png"/>
-      </div>
 
     </section>
   );

@@ -74,10 +74,6 @@
     gap: 0.5rem;
   }
 
-  .navbar__toggle.open {
-    .bar.active
-  }
-
   .bar {
     width: 1.8rem;
     height: 0.15rem;
