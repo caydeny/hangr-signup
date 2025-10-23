@@ -1,22 +1,26 @@
 import './Contact.css';
 
 function Contact() {
-  
+
   return (
     <>
       <section className="contact" id="contact">
-        <h1 className="contact__header">Contact Us.</h1>
-        <div className="contact-row">
-          <h2 className="contact__subheader">
-            We'd love to hear from you — reach out and connect with the Hangr team.
-          </h2>
-          <div className="contact__info">
-            <h3 className="contact__info-header">Contact</h3>
-            <p className="contact__info-details">hangr@gmail.com</p>
-            <p className="contact__info-details">123 Address St</p>
-            <p className="contact__info-details">(123) 456 7890</p>
+        <div className="contact__header">
+          <h1 className="contact__header-title">Contact Us!</h1>
+          <div className="contact__header-socials">
+            <img src="./instagram.png" alt="" />
+            <img src="./linkedin.png" alt="" />
+            <img src="./twitter.png" alt="" />
           </div>
         </div>
+        <div className="divider" />
+        <p className="contact__description">
+          We'd love to hear from you. Reach out and connect with the hangr team.
+        </p>
+        <p className="contact__email">hangr@gmail.com</p>
+        <a href="" className="privacy-policy">Privacy Policy</a>
+        <p className="trademark">© 2025 hangr.</p>
+
       </section>
     </>
   );

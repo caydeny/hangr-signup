@@ -3,10 +3,9 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
-import FAQ from './pages/FAQ'
 import Features from './pages/Features'
+import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
-import Footer from './components/Footer'
 
 function App() {
 
@@ -14,12 +13,12 @@ function App() {
     <>
       <Navbar />
       <Home />
-      {/* <div class="gradient-divider"></div> */}
       <About />
       <Features />
       <FAQ />
       <Contact />
-      <Footer />
+      {/*
+      <Footer /> */}
     </>
   )
 }

@@ -1,41 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import './Navbar.css'
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, [isOpen]);
+  const handleLinkClick = () => {
+    setIsActive(false);
+  };
 
   return (
-    <nav className="navbar">
-      <div
-        className={`navbar__toggle ${isOpen? "open" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
+    <>
+      <div className="nav">
+        <button 
+          className={`nav__menu ${isActive ? "active" : ""}`} 
+          onClick={() => setIsActive(!isActive)}
         >
-        <span className="bar"></span>
-        <span className="bar"></span>
+          <span className="nav__menu-bar"></span>
+          <span className="nav__menu-bar"></span>
+          <span className="nav__menu-bar"></span>
+        </button>
+
+        <h1 className="nav__header">hangr</h1>
+
+        <div className={`nav__sidemenu ${isActive ? "active" : ""}`}>
+          <a href="#about" className="nav__sidemenu-link" onClick={handleLinkClick}>About</a>
+          <a href="#features" className="nav__sidemenu-link" onClick={handleLinkClick}>Features</a>
+          <a href="#faq" className="nav__sidemenu-link" onClick={handleLinkClick}>FAQ</a>
+          <a href="#contact" className="nav__sidemenu-link" onClick={handleLinkClick}>Contact</a>
+        </div>
       </div>
-      <div style={{display:"flex", alignItems:"center", justifyContent:"center", gap:"10%"}}>
-        <img src="/logo_header.svg" alt="logo" />
-        <img className="logo" src="/logo.svg" />
-      </div>
-        
-      <div className={`navbar__links ${isOpen ? "active" : ""}`}>
-        <a className="navbar__link" href="#about" onClick={() => setIsOpen(false)}>About</a>
-        <a className="navbar__link" href="#features" onClick={() => setIsOpen(false)}>Features</a>
-        <a className="navbar__link" href="#faq" onClick={() => setIsOpen(false)}>FAQ</a>
-        <a className="navbar__link" href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
-      </div>
-    </nav>
+    </>
   );
 }
+
 export default Navbar;

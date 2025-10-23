@@ -1,128 +1,45 @@
 .features {
-  padding: 10% 10%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .features__header {
-  font-size: 3rem;
+  font-size: 80px;
+  font-weight: 700;
+  color: #1A1B1C ;
 }
 
-.features__subheader {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 20%;
+.features__backdrop {
+  margin-top: 62px;
+  height: 100%;
+  width: 340px;
+  align-self: flex-end;
 }
 
-.features__wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.features__container {
-  position: relative;
-  display: inline-block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.features__image {
+.features__mock {
+  padding-left: 20px;
+  top: 126px;
+  position: absolute;
   height: auto;
-  margin-bottom: 10%;
-  display: block;
-  width: 70%;
+  width: 230px;
 }
 
 .features__list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.125rem;
+  margin-top: 80px;
+  width: 300px;
 }
 
-.features__list-item {
-  padding: 0.625rem;
+.features__list-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1A1B1C;
 }
 
-.features__list-item.active {
-  border: 2px solid black;
-  border-radius: 10px;
-}
-
-.invis-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  position: absolute;
-}
-
-.invis-button:nth-of-type(1) {
-  bottom: 13%;
-  left: 22%;
-}
-.invis-button:nth-of-type(2) {
-  bottom: 13%;
-  left: 42%;
-}
-.invis-button:nth-of-type(3) {
-  bottom: 13%;
-  left: 62%;
-}
-.invis-button:nth-of-type(4) {
-  bottom: 28%;
-  left: 66%;
-}
-
-@media (min-width: 768px) {
-
-  .features {
-    height: 100vh;
-  }
-
-  .features__header {
-    font-size: 4rem;
-  }
-
-  .features__subheader {
-    margin-bottom: 5%;
-  }
-  .features__wrapper {
-    flex-direction: row;
-  }
-  .features__image {
-    max-width: 25rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .features__header {
-    font-size: 5rem;
-  }
-
-  .features__wrapper {
-    display: flex;
-    gap: 2rem;
-    align-items: stretch;
-  }
-
-  .features__container,
-  .features__list {
-    flex: 1 1 0;
-  }
-
-  .features__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .features__image {
-    max-width: 50%;
-  }
-
-  .features__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.125rem;
-  }
+.features__list-description {
+  padding-top: 8px;
+  font-size: 13px;
+  color: #1A1B1C;
 }
