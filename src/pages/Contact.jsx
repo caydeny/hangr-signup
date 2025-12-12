@@ -8,7 +8,18 @@ function Contact() {
         <div className="contact__header">
           <h1 className="contact__header-title">Contact Us!</h1>
           <div className="contact__header-socials">
-            <img src="./instagram.png" alt="" />
+            <a
+              href="https://instagram.com/hangrstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./instagram.png"
+                alt="Instagram"
+                style={{ cursor: "pointer" }}
+              />
+            </a>
+
             <img src="./linkedin.png" alt="" />
             <img src="./twitter.png" alt="" />
           </div>

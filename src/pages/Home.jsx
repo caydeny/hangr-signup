@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import './Home.css';
 
 function Home() {
+  const title = ["Explore", "Uncover", "Connect"];
+  const [index, setIndex] = useState(0);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
   const [count, setCount] = useState(null);
@@ -21,7 +23,6 @@ function Home() {
       return;
     }
 
-    // simple email format validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
       setStatus("invalid-format");
@@ -82,7 +83,14 @@ function Home() {
   return (
     <>
       <section className="home">
-        <h1 className="home__header">Explore</h1>
+        <span 
+          className="home__header"
+          onAnimationIteration={() =>
+            setIndex((prev) => (prev + 1) % title.length)
+          }
+        >
+          {title[index]}
+        </span>
         <h2 className="home__subheader">Brands that fit your unique style</h2>
         <div className="home__background"></div>
         <img src="./mock.png" alt="" className="home__mock" />

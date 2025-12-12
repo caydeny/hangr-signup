@@ -10,6 +10,27 @@
   font-style: italic;
   font-weight: 700;
   margin-top: 10px;
+  display: inline-block;
+  animation: slideHorizontal 4s infinite;
+}
+
+@keyframes slideHorizontal {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
 }
 
 .home__subheader {

@@ -11,6 +11,7 @@
   font-size: 30px;
   font-weight: 700;
 }
+
 .about__header-span {
   font-style: italic;
   font-weight: 400;
@@ -23,15 +24,41 @@
   line-height: 18px;
 }
 
-.about__sample {
-  margin-top: 35px;
-  height: auto;
-  width: 100%;
-}
-
 .about__p2 {
   margin-top: 35px;
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
 }
+
+.about__images {
+  display: flex;
+  margin-top: 35px;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  gap: 10px;
+}
+
+/* ---- Image Animation ---- */
+.about__images img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* When visible */
+.about__images img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered delays — these now target all imgs correctly, regardless of nesting */
+.about__images img:nth-of-type(1) { transition-delay: 0s; }
+.about__images img:nth-of-type(2) { transition-delay: 0.3s; }
+.about__images img:nth-of-type(3) { transition-delay: 0.45s; }
