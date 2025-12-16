@@ -1,4 +1,5 @@
 import './Contact.css';
+import { Link } from 'react-router-dom';
 
 function Contact() {
 
@@ -29,7 +30,10 @@ function Contact() {
           We'd love to hear from you. Reach out and connect with the hangr team.
         </p>
         <p className="contact__email">hangr@gmail.com</p>
-        <a href="" className="privacy-policy">Privacy Policy</a>
+        <Link to="/privacy" className="privacy-policy">
+  Privacy Policy
+</Link>
+
         <p className="trademark">© 2025 hangr.</p>
 
       </section>
