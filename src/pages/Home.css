@@ -15,22 +15,10 @@
 }
 
 @keyframes slideHorizontal {
-  0% {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  20% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  80% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(60px);
-  }
+  0% { opacity: 0; transform: translateX(-60px); }
+  20% { opacity: 1; transform: translateX(0); }
+  80% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(60px); }
 }
 
 .home__subheader {
@@ -40,20 +28,47 @@
   color: #4A4A4A;
 }
 
-.home__background {
+.home__background-stack {
   margin-top: 62px;
   width: 100%;
   height: 340px;
-  background-image: url('/background.png');
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.home__background-row {
+  flex: 1;
+  width: 100%;
+
   background-repeat: repeat-x;
   background-position: 0 0;
-  animation: scroll-background 6s linear infinite;
+
+  /* THIS is the key: force the repeat tile width */
+  background-size: var(--tile) 100%;
+
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   will-change: background-position;
 }
 
-@keyframes scroll-background {
+.home__background-row.scroll-left {
+  animation-name: scroll-left;
+}
+
+.home__background-row.scroll-right {
+  animation-name: scroll-right;
+}
+
+@keyframes scroll-left {
   from { background-position: 0 0; }
-  to { background-position: -392px 0; }
+  to   { background-position: calc(-1 * var(--tile)) 0; }
+}
+
+@keyframes scroll-right {
+  from { background-position: calc(-1 * var(--tile)) 0; }
+  to   { background-position: 0 0; }
 }
 
 .home__mock {
