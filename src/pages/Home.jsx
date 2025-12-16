@@ -98,7 +98,7 @@ function Home() {
           className="home__background-row scroll-right"
           style={{
             backgroundImage: "url(/back1.svg)",
-            // set this to the exact tile width that used to work for you:
+
             "--tile": "392px",
           }}
         />

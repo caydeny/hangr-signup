@@ -44,7 +44,6 @@
   background-repeat: repeat-x;
   background-position: 0 0;
 
-  /* THIS is the key: force the repeat tile width */
   background-size: var(--tile) 100%;
 
   animation-duration: 6s;
