@@ -317,7 +317,7 @@ function Features() {
         <h2 className="features__list-title">{displayStep.title}</h2>
         <p className="features__list-description">{displayStep.description}</p>
 
-        {showTapHint && <p className="features__tap-hint">Tap to continue</p>}
+        {showTapHint && <p className="features__tap-hint">Tap to learn more, swipe to continue</p>}
 
         <p className="features__step-indicator">
           {displayStepIndex + 1} / {displayFeature.steps.length}
