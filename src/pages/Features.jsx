@@ -116,7 +116,7 @@ function Features() {
   const [freezeLayer, setFreezeLayer] = useState(false);
   const [hasTappedOnce, setHasTappedOnce] = useState(false);
 
-  const touchRef = useRef({ x: 0, y: 0 });
+  const touchRef = useRef({ x: 0, y: 0, moved: false });
   const commitRef = useRef(null);
   const rafRef = useRef(null);
   const ignoreClickRef = useRef(false);
@@ -191,7 +191,15 @@ function Features() {
   const onTouchStart = (e) => {
     if (isTransitioning) return;
     const t = e.touches[0];
-    touchRef.current = { x: t.clientX, y: t.clientY };
+    touchRef.current = { x: t.clientX, y: t.clientY, moved: false };
+  };
+
+  const onTouchMove = (e) => {
+    if (isTransitioning) return;
+    const t = e.touches[0];
+    const dx = t.clientX - touchRef.current.x;
+    const dy = t.clientY - touchRef.current.y;
+    if (Math.abs(dx) > 12 || Math.abs(dy) > 12) touchRef.current.moved = true;
   };
 
   const onTouchEnd = (e) => {
@@ -200,10 +208,11 @@ function Features() {
     ignoreClickRef.current = true;
     setTimeout(() => {
       ignoreClickRef.current = false;
-    }, 0);
+    }, 450);
 
-    const dx = e.changedTouches[0].clientX - touchRef.current.x;
-    const dy = e.changedTouches[0].clientY - touchRef.current.y;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchRef.current.x;
+    const dy = t.clientY - touchRef.current.y;
 
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
       const dir = dx < 0 ? 1 : -1;
@@ -212,7 +221,7 @@ function Features() {
       return;
     }
 
-    if (Math.abs(dx) < 10 && Math.abs(dy) < 10) nextStep();
+    if (!touchRef.current.moved) nextStep();
   };
 
   const onDotClick = (i) => {
@@ -231,6 +240,7 @@ function Features() {
         <div
           className="features__mock-wrapper"
           onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
           onClick={() => {
             if (ignoreClickRef.current) return;

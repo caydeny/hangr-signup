@@ -17,7 +17,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  touch-action: pan-y;
 }
 
 .features__mock-wrapper {
@@ -27,6 +26,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  touch-action: pan-y;
 }
 
 .features__backdrop {
