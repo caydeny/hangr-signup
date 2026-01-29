@@ -21,6 +21,7 @@
   height: 13px;
   border: none;
   background: none;
+  top: 40%;
 }
 
 .nav__menu-bar {
@@ -100,6 +101,7 @@
 .nav__sidemenu.active .nav__sidemenu-link:not(:first-child) {
   border-top: 1px solid #E0E0E0;
   width: 76%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
