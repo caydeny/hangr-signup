@@ -10,7 +10,7 @@
   font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 56px;
+  margin-bottom: 72px;
 }
 
 .faq__list {
@@ -68,4 +68,18 @@
   line-height: 1.6;
   padding-left: 28px;
   margin-top: 16px;
+}
+
+@media (min-width: 1000px) {
+  .faq__header {
+    margin-left: 24%;
+  }
+  .faq__header br {
+    display: none;
+  }
+
+  .faq__list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }

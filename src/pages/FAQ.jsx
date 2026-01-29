@@ -22,7 +22,7 @@ function FAQ() {
 
   return (
     <section className="faq" id="faq">
-      <h1 className="faq__header">Frequently asked<br />Questions</h1>
+      <h1 className="faq__header">Frequently Asked <br />Questions</h1>
 
       <div className="faq__list">
         {faqs.map((item, index) => (
