@@ -20,9 +20,6 @@ function Contact() {
                 style={{ cursor: "pointer" }}
               />
             </a>
-
-            <img src="./linkedin.png" alt="" />
-            <img src="./twitter.png" alt="" />
           </div>
         </div>
         <div className="divider" />
@@ -31,10 +28,10 @@ function Contact() {
         </p>
         <p className="contact__email">hangr@gmail.com</p>
         <Link to="/privacy" className="privacy-policy">
-  Privacy Policy
-</Link>
+          Privacy Policy
+        </Link>
 
-        <p className="trademark">© 2025 hangr.</p>
+        <p className="trademark">© 2026 hangr.</p>
 
       </section>
     </>

@@ -24,8 +24,9 @@
   padding-top: 6px;
 }
 
-.contact__header-socials > img {
-  padding-left: 10px;
+.contact__header-socials a img {
+  width: 24px;
+  height: 24px;
 }
 
 .divider {
@@ -57,4 +58,11 @@
   margin-top: 4px;
   font-size: 10px;
   align-self: center; 
+}
+
+@media (min-width: 1000px) {
+  .contact {
+    padding-left: 28%;
+    padding-right: 28%;
+  }
 }
