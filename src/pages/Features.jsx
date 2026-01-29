@@ -109,6 +109,7 @@ function Features() {
   const [activeStepByFeature, setActiveStepByFeature] = useState(() =>
     Object.fromEntries(slides.map((f) => [f.id, 0]))
   );
+
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState(1);
   const [renderedFeatureIndex, setRenderedFeatureIndex] = useState(0);
@@ -118,8 +119,7 @@ function Features() {
   const touchRef = useRef({ x: 0, y: 0 });
   const commitRef = useRef(null);
   const rafRef = useRef(null);
-
-  const pointerRef = useRef({ x: 0, y: 0, id: null, moved: false });
+  const ignoreClickRef = useRef(false);
 
   useEffect(() => {
     return () => {
@@ -130,6 +130,7 @@ function Features() {
 
   const activeFeature = slides[activeFeatureIndex];
   const activeStepIndex = activeStepByFeature[activeFeature.id];
+
   const renderedFeature = slides[renderedFeatureIndex];
   const renderedStepIndex = activeStepByFeature[renderedFeature.id];
 
@@ -176,11 +177,13 @@ function Features() {
   };
 
   const prevFeature = () => {
+    setHasTappedOnce(true);
     const next = (renderedFeatureIndex - 1 + slides.length) % slides.length;
     goFeature(next, -1);
   };
 
   const nextFeature = () => {
+    setHasTappedOnce(true);
     const next = (renderedFeatureIndex + 1) % slides.length;
     goFeature(next, 1);
   };
@@ -193,6 +196,11 @@ function Features() {
 
   const onTouchEnd = (e) => {
     if (isTransitioning) return;
+
+    ignoreClickRef.current = true;
+    setTimeout(() => {
+      ignoreClickRef.current = false;
+    }, 0);
 
     const dx = e.changedTouches[0].clientX - touchRef.current.x;
     const dy = e.changedTouches[0].clientY - touchRef.current.y;
@@ -208,41 +216,9 @@ function Features() {
   };
 
   const onDotClick = (i) => {
-    if (isTransitioning) return;
+    setHasTappedOnce(true);
     const dir = i > renderedFeatureIndex ? 1 : -1;
     goFeature(i, dir);
-  };
-
-  const onPointerDown = (e) => {
-    if (isTransitioning) return;
-    pointerRef.current = { x: e.clientX, y: e.clientY, id: e.pointerId, moved: false };
-    if (e.pointerType === "touch") e.currentTarget.setPointerCapture(e.pointerId);
-  };
-
-  const onPointerMove = (e) => {
-    if (pointerRef.current.id !== e.pointerId) return;
-    const dx = e.clientX - pointerRef.current.x;
-    const dy = e.clientY - pointerRef.current.y;
-    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) pointerRef.current.moved = true;
-  };
-
-  const onPointerUp = (e) => {
-    if (isTransitioning) return;
-    if (pointerRef.current.id !== e.pointerId) return;
-
-    if (e.pointerType !== "touch") return;
-
-    const dx = e.clientX - pointerRef.current.x;
-    const dy = e.clientY - pointerRef.current.y;
-
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
-      const dir = dx < 0 ? 1 : -1;
-      const next = (renderedFeatureIndex + dir + slides.length) % slides.length;
-      goFeature(next, dir);
-      return;
-    }
-
-    if (Math.abs(dx) < 10 && Math.abs(dy) < 10) nextStep();
   };
 
   const showTapHint = !hasTappedOnce && displayStepIndex === 0;
@@ -256,13 +232,8 @@ function Features() {
           className="features__mock-wrapper"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onClick={(e) => {
-            if (isTransitioning) return;
-            if (pointerRef.current.moved) return;
-            if (e.detail === 0) return;
+          onClick={() => {
+            if (ignoreClickRef.current) return;
             nextStep();
           }}
         >
@@ -273,9 +244,12 @@ function Features() {
               e.stopPropagation();
               prevFeature();
             }}
+            aria-label="Previous feature"
             disabled={isTransitioning}
           >
-            <span className="features__nav-icon">‹</span>
+            <span className="features__nav-icon" aria-hidden="true">
+              ‹
+            </span>
           </button>
 
           <button
@@ -285,9 +259,12 @@ function Features() {
               e.stopPropagation();
               nextFeature();
             }}
+            aria-label="Next feature"
             disabled={isTransitioning}
           >
-            <span className="features__nav-icon">›</span>
+            <span className="features__nav-icon" aria-hidden="true">
+              ›
+            </span>
           </button>
 
           <img

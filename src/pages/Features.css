@@ -105,6 +105,9 @@
   transition:
     opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .features__fade-img.is-active {
