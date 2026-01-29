@@ -72,14 +72,15 @@
 
 @media (min-width: 1000px) {
   .faq__header {
-    margin-left: 24%;
+    margin-left: 32%;
   }
+
   .faq__header br {
     display: none;
   }
 
   .faq__list {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
   }
 }
