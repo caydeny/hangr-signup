@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import "./Features.css";
 
 function Features() {
@@ -109,20 +109,27 @@ function Features() {
   const [activeStepByFeature, setActiveStepByFeature] = useState(() =>
     Object.fromEntries(slides.map((f) => [f.id, 0]))
   );
-
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState(1);
   const [renderedFeatureIndex, setRenderedFeatureIndex] = useState(0);
-
   const [freezeLayer, setFreezeLayer] = useState(false);
   const [hasTappedOnce, setHasTappedOnce] = useState(false);
 
   const touchRef = useRef({ x: 0, y: 0 });
-  const timerRef = useRef(null);
+  const commitRef = useRef(null);
+  const rafRef = useRef(null);
+
+  const pointerRef = useRef({ x: 0, y: 0, id: null, moved: false });
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(commitRef.current);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const activeFeature = slides[activeFeatureIndex];
   const activeStepIndex = activeStepByFeature[activeFeature.id];
-
   const renderedFeature = slides[renderedFeatureIndex];
   const renderedStepIndex = activeStepByFeature[renderedFeature.id];
 
@@ -135,8 +142,8 @@ function Features() {
   const displayStep = displayFeature.steps[displayStepIndex];
 
   const nextStep = () => {
+    if (isTransitioning) return;
     setHasTappedOnce(true);
-
     setActiveStepByFeature((prev) => {
       const curr = prev[renderedFeature.id];
       const total = renderedFeature.steps.length;
@@ -148,61 +155,94 @@ function Features() {
     if (isTransitioning) return;
     if (nextIndex === renderedFeatureIndex) return;
 
+    setHasTappedOnce(true);
     setDirection(dir);
+
+    clearTimeout(commitRef.current);
+    cancelAnimationFrame(rafRef.current);
+
     setIsTransitioning(true);
     setActiveFeatureIndex(nextIndex);
 
-    clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => {
+    commitRef.current = setTimeout(() => {
       setFreezeLayer(true);
-
       setRenderedFeatureIndex(nextIndex);
-      setIsTransitioning(false);
 
-      requestAnimationFrame(() => setFreezeLayer(false));
+      rafRef.current = requestAnimationFrame(() => {
+        setIsTransitioning(false);
+        rafRef.current = requestAnimationFrame(() => setFreezeLayer(false));
+      });
     }, 520);
   };
 
   const prevFeature = () => {
-    setHasTappedOnce(true);
     const next = (renderedFeatureIndex - 1 + slides.length) % slides.length;
     goFeature(next, -1);
   };
 
   const nextFeature = () => {
-    setHasTappedOnce(true);
     const next = (renderedFeatureIndex + 1) % slides.length;
     goFeature(next, 1);
   };
 
   const onTouchStart = (e) => {
+    if (isTransitioning) return;
     const t = e.touches[0];
     touchRef.current = { x: t.clientX, y: t.clientY };
   };
 
   const onTouchEnd = (e) => {
+    if (isTransitioning) return;
+
     const dx = e.changedTouches[0].clientX - touchRef.current.x;
     const dy = e.changedTouches[0].clientY - touchRef.current.y;
 
-    const swipeThreshold = 50;
-    const tapThreshold = 10;
-
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > swipeThreshold) {
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
       const dir = dx < 0 ? 1 : -1;
       const next = (renderedFeatureIndex + dir + slides.length) % slides.length;
       goFeature(next, dir);
       return;
     }
 
-    if (Math.abs(dx) < tapThreshold && Math.abs(dy) < tapThreshold) {
-      nextStep();
-    }
+    if (Math.abs(dx) < 10 && Math.abs(dy) < 10) nextStep();
   };
 
   const onDotClick = (i) => {
-    setHasTappedOnce(true);
+    if (isTransitioning) return;
     const dir = i > renderedFeatureIndex ? 1 : -1;
     goFeature(i, dir);
+  };
+
+  const onPointerDown = (e) => {
+    if (isTransitioning) return;
+    pointerRef.current = { x: e.clientX, y: e.clientY, id: e.pointerId, moved: false };
+    if (e.pointerType === "touch") e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e) => {
+    if (pointerRef.current.id !== e.pointerId) return;
+    const dx = e.clientX - pointerRef.current.x;
+    const dy = e.clientY - pointerRef.current.y;
+    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) pointerRef.current.moved = true;
+  };
+
+  const onPointerUp = (e) => {
+    if (isTransitioning) return;
+    if (pointerRef.current.id !== e.pointerId) return;
+
+    if (e.pointerType !== "touch") return;
+
+    const dx = e.clientX - pointerRef.current.x;
+    const dy = e.clientY - pointerRef.current.y;
+
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      const dir = dx < 0 ? 1 : -1;
+      const next = (renderedFeatureIndex + dir + slides.length) % slides.length;
+      goFeature(next, dir);
+      return;
+    }
+
+    if (Math.abs(dx) < 10 && Math.abs(dy) < 10) nextStep();
   };
 
   const showTapHint = !hasTappedOnce && displayStepIndex === 0;
@@ -216,7 +256,15 @@ function Features() {
           className="features__mock-wrapper"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
-          onClick={nextStep}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onClick={(e) => {
+            if (isTransitioning) return;
+            if (pointerRef.current.moved) return;
+            if (e.detail === 0) return;
+            nextStep();
+          }}
         >
           <button
             type="button"
@@ -225,12 +273,9 @@ function Features() {
               e.stopPropagation();
               prevFeature();
             }}
-            aria-label="Previous feature"
             disabled={isTransitioning}
           >
-            <span className="features__nav-icon" aria-hidden="true">
-              ‹
-            </span>
+            <span className="features__nav-icon">‹</span>
           </button>
 
           <button
@@ -240,12 +285,9 @@ function Features() {
               e.stopPropagation();
               nextFeature();
             }}
-            aria-label="Next feature"
             disabled={isTransitioning}
           >
-            <span className="features__nav-icon" aria-hidden="true">
-              ›
-            </span>
+            <span className="features__nav-icon">›</span>
           </button>
 
           <img
@@ -307,7 +349,9 @@ function Features() {
         {slides.map((_, i) => (
           <span
             key={i}
-            className={`features__dot ${i === displayFeatureIndex ? "active" : ""}`}
+            className={`features__dot ${
+              i === displayFeatureIndex ? "active" : ""
+            }`}
             onClick={() => onDotClick(i)}
           />
         ))}
@@ -317,7 +361,11 @@ function Features() {
         <h2 className="features__list-title">{displayStep.title}</h2>
         <p className="features__list-description">{displayStep.description}</p>
 
-        {showTapHint && <p className="features__tap-hint">Tap to learn more, swipe to continue</p>}
+        {showTapHint && (
+          <p className="features__tap-hint">
+            Tap to learn more, swipe to continue
+          </p>
+        )}
 
         <p className="features__step-indicator">
           {displayStepIndex + 1} / {displayFeature.steps.length}

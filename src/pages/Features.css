@@ -192,10 +192,8 @@
   background: transparent;
   padding: 0;
   cursor: pointer;
-
   display: grid;
   place-items: center;
-
   transition: opacity 150ms ease;
 }
 
