@@ -1,39 +1,124 @@
+import { useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Privacy.css";
+import Contact from "./Contact.jsx";
 
 function Privacy() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const sections = useMemo(
+    () => [
+      {
+        id: "overview",
+        title: "Overview",
+        body: [
+          "Hangr collects limited information to operate the waitlist and improve the product experience.",
+          "This policy explains what we collect, how we use it, and the choices you have.",
+        ],
+      },
+      {
+        id: "collect",
+        title: "Information we collect",
+        body: [
+          "Email address when you join the waitlist.",
+          "Event + usage signals (for example: waitlist signup events, aggregated counts).",
+        ],
+      },
+      {
+        id: "use",
+        title: "How we use information",
+        body: [
+          "Operate and manage the waitlist.",
+          "Send launch announcements and product updates.",
+          "Prevent abuse and maintain platform security.",
+        ],
+      },
+      {
+        id: "sharing",
+        title: "Sharing",
+        body: [
+          "We do not sell your personal information.",
+          "We may share limited information with service providers that help us run Hangr (for example: email/event tracking, hosting, analytics). These providers process data on our behalf and are expected to protect it.",
+        ],
+      },
+      {
+        id: "retention",
+        title: "Data retention",
+        body: [
+          "We keep waitlist information as long as needed to operate the waitlist and communicate about hangr.",
+          "You can request deletion at any time.",
+        ],
+      },
+      {
+        id: "choices",
+        title: "Your choices",
+        body: [
+          "Request access, correction, or deletion of your email.",
+          "Unsubscribe from emails using the link in any message.",
+        ],
+      },
+      {
+        id: "security",
+        title: "Security",
+        body: [
+          "We use reasonable safeguards to protect information.",
+          "No method of transmission or storage is 100% secure.",
+        ],
+      },
+      {
+        id: "contact",
+        title: "Contact",
+        body: ["For privacy requests, email: privacy@hangr.app"],
+      },
+    ],
+    []
+  );
+
   return (
-    <main className="privacy">
-      <h1 className="privacy__header">Privacy Policy</h1>
-      <p className="privacy__text">
-        Hangr respects your privacy. This Privacy Policy explains how we collect,
-        use, and protect your information.
-      </p>
+    <>
+      <section className="privacy">
+        <div className="privacy__top">
+          <button className="privacy__back" onClick={() => navigate("/")}>
+            ← Back
+          </button>
+        </div>
 
-      <h2 className="privacy__subheader">Information We Collect</h2>
-      <p className="privacy__text">
-        We may collect basic information such as contact details and anonymous
-        usage data to improve our platform.
-      </p>
+        <div className="privacy__wrap">
+          <h1 className="privacy__hero">
+            Privacy that respects{" "}
+            <span className="privacy__hero-italic">your data.</span>
+          </h1>
 
-      <h2 className="privacy__subheader">How We Use Information</h2>
-      <p className="privacy__text">
-        Information is used solely to operate and improve the Hangr experience.
-      </p>
+          <p className="privacy__lede">Last updated: January 29, 2026</p>
 
-      <h2 className="privacy__subheader">Third-Party Services</h2>
-      <p className="privacy__text">
-        We may use trusted third-party services for analytics or hosting.
-      </p>
+          <div className="privacy__content">
+            {sections.map((s) => (
+              <div key={s.id} className="privacy__section">
+                <h2 className="privacy__title">{s.title}</h2>
 
-      <h2 className="privacy__subheader">Your Rights</h2>
-      <p className="privacy__text">
-        You may request access to or deletion of your data by contacting us.
-      </p>
+                {s.body.length === 1 ? (
+                  <p className="privacy__p">{s.body[0]}</p>
+                ) : (
+                  <ul className="privacy__bullets">
+                    {s.body.map((t, i) => (
+                      <li key={i} className="privacy__p">
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <p className="privacy__text">
-        Last updated: 2025
-      </p>
-    </main>
+      <Contact />
+    </>
   );
 }
 
