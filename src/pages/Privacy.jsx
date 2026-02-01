@@ -34,7 +34,6 @@ function Privacy() {
         body: [
           "Operate and manage the waitlist.",
           "Send launch announcements and product updates.",
-          "Prevent abuse and maintain platform security.",
         ],
       },
       {
@@ -42,9 +41,10 @@ function Privacy() {
         title: "Sharing",
         body: [
           "We do not sell your personal information.",
-          "We may share limited information with service providers that help us run Hangr (for example: email/event tracking, hosting, analytics). These providers process data on our behalf and are expected to protect it.",
+          "We use trusted service providers to help run hangr (for example: Plunk for email delivery and waitlist management). These providers process data on our behalf and are expected to protect it.",
         ],
       },
+
       {
         id: "retention",
         title: "Data retention",
@@ -65,10 +65,11 @@ function Privacy() {
         id: "security",
         title: "Security",
         body: [
-          "We use reasonable safeguards to protect information.",
-          "No method of transmission or storage is 100% secure.",
+          "hangr uses trusted providers (including Plunk) to collect and store waitlist information.",
+          "We rely on these providers’ security measures and use reasonable safeguards on our side, but no method of transmission or storage is 100% secure.",
         ],
       },
+
       {
         id: "contact",
         title: "Contact",
@@ -93,7 +94,7 @@ function Privacy() {
             <span className="privacy__hero-italic">your data.</span>
           </h1>
 
-          <p className="privacy__lede">Last updated: January 29, 2026</p>
+          <p className="privacy__lede">Last updated: January 31, 2026</p>
 
           <div className="privacy__content">
             {sections.map((s) => (
