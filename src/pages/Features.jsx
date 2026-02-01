@@ -8,15 +8,15 @@ function Features() {
         id: "like",
         steps: [
           {
-            title: "Like to Train Your Feed",
+            title: "Like",
             description:
-              "Tap or swipe to Like outfits you love. Every like helps hangr understand your style and improve future recommendations.",
+              "Tap Like on clothing you enjoy. This tells hangr what styles, brands, and aesthetics you're drawn to.",
             image: "/like_1.png",
           },
           {
-            title: "Like to Train Your Feed",
+            title: "Like",
             description:
-              "The more you like, the faster your feed adapts—so new suggestions feel increasingly on-point.",
+              "As you like more, your feed adapts—surfacing brands and looks that feel increasingly on point.",
             image: "/like_2.png",
           },
         ],
@@ -25,15 +25,15 @@ function Features() {
         id: "dislike",
         steps: [
           {
-            title: "Not Your Style?",
+            title: "Dislike",
             description:
-              "Tap or swipe to Dislike outfits that aren't your vibe. This helps hangr learn what to avoid.",
+              "Not your style? Dislike items to reduce similar recommendations in your feed.",
             image: "/dislike_1.png",
           },
           {
-            title: "Not Your Style?",
+            title: "Dislike",
             description:
-              "Each dislike refines your feed, cutting down the noise so you see more styles you'd actually wear.",
+              "Each dislike helps cut the noise, so you spend less time scrolling past things you wouldn't wear.",
             image: "/dislike_2.png",
           },
         ],
@@ -42,15 +42,15 @@ function Features() {
         id: "info",
         steps: [
           {
-            title: "Learn More",
+            title: "Info",
             description:
-              "Tap Info to view brand details, materials, and links to shop or explore further.",
+              "Tap Info to see brand details, materials, and key information about an item.",
             image: "/info_1.png",
           },
           {
-            title: "Learn More",
+            title: "Info",
             description:
-              "Get everything you need to know about an item or brand—without breaking your flow.",
+              "Explore further with direct links to shop or learn more—without breaking your browsing flow.",
             image: "/info_2.png",
           },
         ],
@@ -59,21 +59,21 @@ function Features() {
         id: "save",
         steps: [
           {
-            title: "Build a Wardrobe",
+            title: "Save",
             description:
               "Tap the star to save looks you love and keep them in your personal wardrobe.",
             image: "/save_1.png",
           },
           {
-            title: "Build a Wardrobe",
+            title: "Save",
             description:
-              "Your saved tab becomes a curated shortlist for comparing and revisiting styles.",
+              "Use your saved list to compare options, revisit favorites, and refine your style choices.",
             image: "/save_2.png",
           },
           {
-            title: "Build a Wardrobe",
+            title: "Save",
             description:
-              "Save brands you love to get even more recommendations that match your aesthetic.",
+              "Over time, your wardrobe becomes a curated collection that reflects your taste.",
             image: "/save_3.png",
           },
         ],
