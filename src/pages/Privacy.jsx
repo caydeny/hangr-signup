@@ -72,7 +72,7 @@ function Privacy() {
       {
         id: "contact",
         title: "Contact",
-        body: ["For privacy requests, email: privacy@hangr.app"],
+        body: ["For privacy requests, email: contact.hangr@gmail.com"],
       },
     ],
     []

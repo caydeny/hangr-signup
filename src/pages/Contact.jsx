@@ -26,7 +26,7 @@ function Contact() {
         <p className="contact__description">
           We'd love to hear from you. Reach out and connect with the hangr team.
         </p>
-        <p className="contact__email">contact@hangr.app</p>
+        <p className="contact__email">contact.hangr@gmail.com</p>
         <Link to="/privacy" className="privacy-policy">
           Privacy Policy
         </Link>
