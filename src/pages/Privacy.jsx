@@ -66,14 +66,14 @@ function Privacy() {
         title: "Security",
         body: [
           "hangr uses trusted providers (including Plunk) to collect and store waitlist information.",
-          "We rely on these providers’ security measures and use reasonable safeguards on our side, but no method of transmission or storage is 100% secure.",
+          "We rely on these providers' security measures and use reasonable safeguards on our side, but no method of transmission or storage is 100% secure.",
         ],
       },
 
       {
         id: "contact",
         title: "Contact",
-        body: ["For privacy requests, email: contact.hangr@gmail.com"],
+        body: ["For privacy requests, email: contact.hangr.app@gmail.com"],
       },
     ],
     []
