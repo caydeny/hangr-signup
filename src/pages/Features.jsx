@@ -78,29 +78,6 @@ function Features() {
           },
         ],
       },
-      {
-        id: "search",
-        steps: [
-          {
-            title: "Find by Photo",
-            description:
-              "Can’t find a clothing item online? Take a photo to discover similar or identical products.",
-            image: "/search_1.png",
-          },
-          {
-            title: "Find by Photo",
-            description:
-              "Scroll through results to explore matching styles and brands.",
-            image: "/search_2.png",
-          },
-          {
-            title: "Find by Photo",
-            description:
-              "Tap to move through steps, then tap any item to like, dislike, save, or learn more.",
-            image: "/search_3.png",
-          },
-        ],
-      },
     ],
     []
   );
