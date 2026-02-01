@@ -42,7 +42,7 @@ function About() {
       </h1>
 
       <p className="about__p1 about__animate about__delay-1">
-        hangr is a brand discovery app that makes finding new fashion labels
+        hangr is a clothing discovery app that makes finding new fashion labels
         effortless and personal. Users swipe through curated brands and products
         that fit their unique style.
       </p>
