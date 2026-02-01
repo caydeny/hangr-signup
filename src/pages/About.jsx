@@ -17,16 +17,16 @@ function About() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.35,
-        rootMargin: "0px 0px -15% 0px",
+        threshold: 0.15,
+        rootMargin: "0px 0px -5% 0px",
       }
     );
+
 
 
     targets.forEach((el) => observer.observe(el));

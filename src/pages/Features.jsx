@@ -10,7 +10,7 @@ function Features() {
           {
             title: "Like to Train Your Feed",
             description:
-              "Tap or swipe to Like outfits you love. Every like helps Hangr understand your style and improve future recommendations.",
+              "Tap or swipe to Like outfits you love. Every like helps hangr understand your style and improve future recommendations.",
             image: "/like_1.png",
           },
           {
@@ -27,13 +27,13 @@ function Features() {
           {
             title: "Not Your Style?",
             description:
-              "Tap or swipe to Dislike outfits that aren’t your vibe. This helps Hangr learn what to avoid.",
+              "Tap or swipe to Dislike outfits that aren't your vibe. This helps hangr learn what to avoid.",
             image: "/dislike_1.png",
           },
           {
             title: "Not Your Style?",
             description:
-              "Each dislike refines your feed, cutting down the noise so you see more styles you’d actually wear.",
+              "Each dislike refines your feed, cutting down the noise so you see more styles you'd actually wear.",
             image: "/dislike_2.png",
           },
         ],
