@@ -207,7 +207,7 @@ function Features() {
     goFeature(i, dir);
   };
 
-  const showTapHint = !hasTappedOnce && displayStepIndex === 0;
+  const showTapHint = true;
 
   return (
     <section className="features" id="features">
